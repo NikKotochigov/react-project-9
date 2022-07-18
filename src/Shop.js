@@ -1,6 +1,12 @@
 import React, { useState, useEffect } from "react";
 import Item from "./Item";
+import styled from 'styled-components';
 
+const ShopList = styled.ul`
+  list-style: none;
+  margin: 0 0 0 0;
+  padding: 0 0 0 0;
+`
 export default function Shop() {
 
     const [items, setItems] = useState()
@@ -26,11 +32,11 @@ export default function Shop() {
         return null
     }
 
-    return <ul>
+    return <ShopList>
         {items.map(item => {
             return <li key={item.id}>
                 <Item info={item} />
             </li>
         })}
-    </ul>;
+    </ShopList>;
 }
